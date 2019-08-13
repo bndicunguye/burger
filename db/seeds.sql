@@ -1,8 +1,3 @@
-INSERT INTO burgers (burger_name)
-VALUES ("double cheese burger");
-
-INSERT INTO burgers (burger_name)
-VALUES ("quarter pound burger");
-
-INSERT INTO burgers (burger_name)
-VALUES ("bacon beef burger");
+USE burger_db;
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("double cheese burger",false),("quarter pound burger",false),("bacon beef burger",false);
