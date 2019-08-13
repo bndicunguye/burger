@@ -1,44 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>eat da burger</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="Stylesheet" href="css/Style.css">
-    <script src="https://kit.fontawesome.com/e80113e085.js"></script>
-<style>
-    body{
-    background-color:beige;
-    padding-left: 600px;
-    margin-top: 250px; 
-    margin-bottom: 300px;
-}
-</style>
-</head>
 <img src="https://media.mnn.com/assets/images/2017/06/sonic_mushroom_beef_burger.jpg.653x0_q80_crop-smart.jpg" alt="burger" width="300" height="300">
 
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-     <span>{{this.id}}.{{this.burger_name}}</span>
-    {{/unless}}
-  {{/each}}
-</ul>
+      {{>burgers/burger-block devoured=true}}
 
-<h2> devoured!</h2>
 
- <ul>
-  {{#each burgers}}
-    {{#if devoured}}
-    <span>{{this.id}}.{{this.burger_name}}</span>
-    {{/if}}
-  {{/each}}
-</ul> 
 
 <div class="container" id="inputForm" style="align-content: center">
         <form>
@@ -46,14 +12,9 @@
             <label for="burgers"
               ><small></small></label
             >
-            <textarea
-              rows="2"
-            ></textarea>
+            <textarea rows="2" id="newburger"></textarea>
           </div>
-          <form>
-            <input type="submit" value="Submit">
+            <input type="submit" id="mySubmit" value="Submit">
 </form> 
-</body>
 
-</html>
   

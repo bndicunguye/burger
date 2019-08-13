@@ -1,14 +1,15 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+
     $(".eatburger").on("click", function(event) {
+      
       var id = $(this).data("id");
       var newburger = $(this).data("newburger");
   
       var devouredState = {
-        devoured: newburger
+        devoured: true
       };
   
-      $.ajax("/api/burger/" + id, {
+      $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devouredState
       }).then(
@@ -19,13 +20,13 @@ $(function() {
       );
     });
   
-    $(".create-form").on("submit", function(event) {
-    
+    $("#mySubmit").on("click", function(event) {
+      console.log("new")
       event.preventDefault();
   
       var newburger = {
         burger_name: $("#newburger").val().trim(),
-        devoured: $("[ burger_name=devoured]").val().trim()
+        devoured: 0
       };
   
       $.ajax("/api/burgers", {
@@ -52,5 +53,5 @@ $(function() {
         }
       );
     });
-  });
+
   

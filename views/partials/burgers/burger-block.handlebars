@@ -1,9 +1,28 @@
-<li>
-	{{name}}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
 
-	<button class="eatburger" data-id="{{id}}" data-newburger="{{devoured}}">
-		{{#if devoured}}DEVOURED BURGER!{{else}}EAT!{{/if}}
-	</button>
-
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-</li>
+                    {{burger_name}}
+                    <button class="eatburger" data-id="{{id}}" data-newburger="{{devoured}}">
+                        DEVOUR IT!
+                    </button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <ul>
+            <div class="col-sm">
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>
+                    {{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+        </ul>
+    </div>
